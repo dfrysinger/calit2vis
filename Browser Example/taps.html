@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Browsers</title>
+    <script type="text/javascript" src="d3.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <style type="text/css">
+
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        background: #21234A;
+      }
+
+      #left {
+        display: block;
+        float: left;
+        width: 200px;
+      }
+
+      #right {
+        display: block;
+        float: left;
+      }
+
+      #center {
+        display: block;
+        float: left;
+        overflow: scroll;
+        border-style: solid;
+        border-color: #000;
+        border-width: 0 2px 0 2px;
+      }
+
+      #top {
+        display: block;
+        float: left;
+        width: 100%;
+        height: 38px;
+        border-bottom: 2px solid black;
+      }
+
+      .triad {
+        margin: 0 2.8% 0 2.8%;
+        height: 38px;
+        width: 40px;
+        background: #21234A;
+        float: left;
+      }
+
+      .triad text {
+        font-weight: 900;
+      }
+
+    </style>
+  </head>
+  <body>
+
+  <!--
+
+
+
+  -->
+    <div id="top">
+
+    </div>
+    <div id="left"></div>
+    <div id="center"></div>
+    <div id="right"></div>
+    <script type="text/javascript">
+
+      //var timing_buffer = 300;
+
+      var top = document.getElementById("top");
+      for(var i = 1; i <= 12; i++){
+        top.innerHTML += "" +
+            "<a onclick='drawCharts("+i+");' class='triad'>" +
+               "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>" +
+                 "<circle cx='20' cy='15' r='9' stroke='black' stroke-width='0' fill='#85C23D'/>" +
+                 "<circle cx='15' cy='23' r='9' stroke='black' stroke-width='0' fill='#E72C8B'/>" +
+                 "<circle cx='25' cy='23' r='9' stroke='black' stroke-width='0' fill='#D68A1A'/>" +
+                 "<text x='20' y='24' font-family='sans-serif' font-size='12' fill='black' " +
+                     "style='text-anchor: middle;'>"+i+"</text>" +
+                "</svg>" +
+              "</a>";
+      }
+
+      document.getElementById("left").style.height = ($(window).height() - 50) + "px";
+      document.getElementById("right").style.height = ($(window).height() - 50) + "px";
+      document.getElementById("center").style.height = ($(window).height() - 50) + "px";
+
+
+      drawCharts(2);
+
+      function drawCharts(n) {
+        document.getElementById("left").innerHTML = "";
+        document.getElementById("right").innerHTML = "";
+        document.getElementById("center").innerHTML = "";
+        var w_left = 200;
+        drawTaps("left", "chart", "data/tapData_" + n + ".json", w_left, 0, 1);
+        var w_right = 200;
+        drawTaps("right", "chart1", "data/aloneData_" + n + ".json", w_right, 0, 2);
+        var w_center = $(window).width() - w_left - w_right - 4;
+        drawTaps("center", "chart2", "data/combined_" + n + ".json", w_center, 3, 0);
+      }
+
+      function drawTaps(parent, chartName, jsonFile, w, line_height, click_index){
+
+        createChart(parent, chartName, w);
+
+        var beat = w/2;
+        var colors = d3.scale.ordinal().range(["#85C23D", "#E72C8B", "#D68A1A"]);
+        var opacity = d3.scale.ordinal().range(["1", ".2"]);
+        var gap_count = 2;
+
+        d3.json(jsonFile, function(subjects) {
+
+          var subject_count = subjects[0].length;
+          var bar_group_count = subject_count + gap_count;
+          var beat_count = subjects[0][0].length;
+
+          var max_beats = new Array();
+          for (var i = 0; i < subjects.length; i++){
+            max_beats[i] = d3.max(subjects[i], function(subject) {
+                                                 return subject.length;
+                                               });
+            var beat_average;
+            var beat_subj_count;
+            for(var j = 0; j < max_beats[i]; j++){
+              beat_average = 0;
+              beat_subj_count = 0;
+              var output = "====["+i+"]====["+j+"]====\n";
+              for(var k = 0; k < subjects[i].length; k++){
+                if(subjects[i][k][j] != undefined && subjects[i][k][j].offset != undefined && subjects[i][k][j].duration > 0){
+                  output += k+": " + subjects[i][k][j].offset + "\n";
+                  beat_average += subjects[i][k][j].offset;
+                  beat_subj_count++;
+                }
+              }
+
+              output += "--------\n";
+              output += beat_average + "/" + beat_subj_count + "\n";
+
+              if(beat_subj_count > 0){
+                beat_average = beat_average / beat_subj_count;
+              }
+              output += "--------\n";
+              output += beat_average + "\n";
+              output += "--------\n";
+
+              for(k = 0; k < subjects[i].length; k++){
+                if(subjects[i][k][j] != undefined){
+                  output += k+": " + (subjects[i][k][j].offset - beat_average) + "\n";
+
+                  subjects[i][k][j].beat_subj_count = beat_subj_count;
+                  subjects[i][k][j].average_offset = beat_average;
+                  subjects[i][k][j].adj_offset = subjects[i][k][j].offset - beat_average;
+                }
+              }
+
+              if(beat_subj_count < 3){
+                output += "*******************************************\n";
+              }
+              if(i == 1 && j > 145){
+                //console.log(output);
+              }
+
+            }
+          }
+
+          var multiplier = 1;
+          var global_max_x = d3.max(subjects, function(trial) {
+                return d3.max(trial, function(subject) {
+                  return d3.max(subject, function(beat){
+                    //console.log(beat.average_offset + (beat.adj_offset * multiplier));
+
+                    return Math.max(Math.abs(beat.average_offset + (beat.adj_offset * multiplier)),
+                                    Math.abs(beat.average_offset + (beat.adj_offset * multiplier) + beat.duration));
+                  })
+                })
+          });
+
+          //console.log(global_max_x);
+          //console.log(subjects);
+          //console.log(max_beats);
+
+          var lh = Math.max(line_height, Math.max($(window).height() / (beat_count*bar_group_count), 1));
+
+          var h = bar_group_count * lh * beat_count;
+
+          var y = function(i) { return i * lh },
+              x = function(d) { return beat + ((d.average_offset + (d.adj_offset * multiplier)) * w / (global_max_x*2)); },
+              width = function(d) { return (d.duration * w / (global_max_x*2) * multiplier); };
+
+          //console.log(h);
+          //console.log(d3.select("svg."+chartName));
+
+
+          var svg = d3.select("svg#"+chartName)
+          if(click_index){
+            svg.on("click", highlight(click_index));
+          }
+          svg.transition().attr("height", h);
+
+          var chart = d3.select("svg#"+chartName);
+
+          var trials = chart.selectAll("g.trial")
+              .data(subjects)
+            .enter().append("g")
+              .style("opacity", function(d, i) { return opacity(i); })
+              .attr("class", "trial");
+
+          var layers = trials.selectAll("g.layer")
+              .data(function(d) { return d; })
+            .enter().append("g")
+              .style("fill", function(d, i) { return colors(i); })
+              .attr("class", "layer")
+              .attr("transform", function(d, i) { return "translate(0," + y(i) + ")"; })
+              .on("mouseover", hover(1))
+              .on("mouseout", hover(0));
+
+          layers.selectAll("g.bar")
+              .data(function(d) { return d; })
+            .enter().append("rect")
+              .attr("width", 0)
+              //.attr("width", function(d) { return width(d); })
+              //.attr("x", function(d) { return 0-10-Math.abs(d.duration * w / (global_max_x*2)); })
+              //.attr("x", beat)
+              .attr("x", function(d, i) { return x(d); })
+              .attr("y", function(d, i) { return y(i) * bar_group_count; })
+              .attr("height", lh)
+            .transition()
+              //.delay(function(d, i) { return timing_buffer + (i * 40 + d.offset * .1); })
+              //.duration(function(d) { timing_buffer = 500 - d.duration * 5; return (d.duration * 5); } )
+              //.delay(function(d, i) { return 200 + (i * 40); })
+              //.duration(function(d) { return (100); } )
+              //.attr("x", function(d, i) { return x(d); })
+              .attr("width", function(d) { return width(d); });
+
+          chart.append("line")
+              .attr("y2", h)
+              .attr("x1", beat)
+              .attr("x2", beat)
+              .style("stroke", "#AAA");
+        });
+      }
+
+
+function createChart(parent, chartName, w) {
+  var chart = d3.select("div#"+parent).append("svg")
+      .attr("class", "chart")
+      .attr("id", chartName)
+      .attr("width", w)
+      .attr("height", 0)
+      .style("background", "#21234A")
+      .append("g");
+  return chart;
+}
+
+function highlight(chart_index) {
+  return function () {
+    var trials = document.getElementById("chart2").childNodes;
+    console.log(chart_index);
+    for(var i = 0; i < trials.length; i++){
+      console.log(trials[i].tagName);
+      if(i == chart_index){
+        trials[i].style.opacity = "1";
+        console.log(trials[i]);
+      } else if(trials[i].tagName == "g") {
+        console.log(trials[i]);
+        trials[i].style.opacity = ".2";
+      }
+    }
+  };
+}
+
+function hover(f) {
+  return function () {
+    var charts = document.getElementsByClassName("chart");
+    for(var i = 0; i < charts.length; i++){
+      var trials = charts[i].childNodes;
+      for(var j = 0; j < trials.length; j++){
+        var subject = trials[j].childNodes;
+        for(var k = 0; k < subject.length; k++){
+          if(subject[k].style.fill != this.style.fill){
+            if(f){
+              subject[k].style.opacity = .2;
+            } else {
+              subject[k].style.opacity = 1;
+            }
+          }
+        }
+      }
+    }
+  };
+}
+
+    </script>
+  </body>
+</html>

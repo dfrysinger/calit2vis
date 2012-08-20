@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Force based label placement</title>
+		<script type="text/javascript" src="d3.js?2.6.0"></script>
+		<script type="text/javascript" src="d3.layout.js?2.6.0"></script>
+		<script type="text/javascript" src="d3.geom.js?2.6.0"></script>
+    <script type="text/javascript" src="preprocess_force.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <style type="text/css">
+      .background {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #EEF;
+        z-index: -100;
+      }
+      .metapane {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background: #DDE;
+        padding: 20px;
+      }
+      .nodename, .nodecountry, .nodedollarvalue {
+        font-family: Verdana, Geneva, sans-serif;
+        color: #113;
+        line-height: 32px;
+      }
+      .nodename {
+        font-size: 32px;
+      }
+      .nodecountry {
+        font-size: 18px;
+      }
+      .nodedollarvalue {
+        font-size: 18px;
+      }
+
+
+    </style>
+	</head>
+	<body>
+<script type="text/javascript" charset="utf-8">
+
+  //From: http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript
+  Number.prototype.formatMoney = function(c, d, t){
+    var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "." : d, t = t == undefined ? "," : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+   };
+
+  function log(base, val) {
+    return Math.log(val) / Math.log(base);
+  }
+
+  var w = $(window).width(),
+      h = $(window).height(),
+      radius = 6,
+      fill = d3.scale.ordinal().range(["#dc0063", "#f00000", "#f08229", "#e6b02e", "#a1e633", "#00dc00", "#00d18c", "#00c7c7", "#00a1e6", "#1f3dfa", "#8200dc", "#a100c7"]);
+			var labelDistance = 0;
+
+			var vis = d3.select("body").append("svg:svg")
+          .attr("width", w)
+          .attr("height", h);
+
+			var nodes = [];
+			var labelAnchors = [];
+			var labelAnchorLinks = [];
+			var links = [];
+
+      d3.json("IntlNodes.json", function(json) {
+
+        json = preprocess.links(json);
+        nodes = json.nodes;
+        links = json.links;
+        //console.log(links);
+
+        for(var i = 0; i < nodes.length; i++) {
+          //console.log("width: ", w, "\nheight: ", h);
+          nodes[i].y = -0.5;
+          nodes[i].x = -0.5;
+          labelAnchors.push({node: nodes[i]});
+          labelAnchors.push({node: nodes[i]});
+          labelAnchorLinks.push({
+            source : i * 2,
+            target : i * 2 + 1,
+            weight : 1
+          });
+        }
+
+        var force = d3.layout.force()
+            .size([w, h])
+            .nodes(nodes)
+            .links(links)
+            .gravity(1)
+            .linkDistance(150)
+            .charge(-2500)
+            .linkStrength(function(d) { return 10; //return d.weight * 10
+            });
+
+        force.start();
+
+        var force2 = d3.layout.force()
+            .nodes(labelAnchors)
+            .links(labelAnchorLinks)
+            .gravity(0)
+            .linkDistance(0)
+            .linkStrength(8)
+            .charge(-100)
+            .size([w, h]);
+
+        //force2.start();
+
+        var link = vis.selectAll("line.link")
+            .data(links)
+          .enter().append("svg:line")
+            .attr("class", "link")
+            .style("stroke", "#CCC")
+            .style("stroke-width", function(d) { var sw = log(10, d.target.dvalue); sw = sw >= 0 ? sw : 1; return sw; });
+
+        var node = vis.selectAll("g.node")
+            .data(force.nodes())
+          .enter().append("svg:g")
+            .attr("class", "node");
+
+        node.append("svg:circle")
+            .attr("r", function(d) { return (radius + (d.links * .5)) - .75;})
+            .style("fill", function(d) { return fill(d.country_code); })
+            .style("stroke", function(d) { return d3.rgb(fill(d.country_code)).darker(); })
+            .style("z-index", "1000")
+            .on("click", click(1));
+
+        //node.call(force.drag);
+
+        d3.select(document.getElementById("metapane")).on("click", click(0));
+
+        var clicked;
+        var clickedid;
+
+        function click(f) {
+          if(f){
+            return function(d, i){
+              var metapane = document.getElementById("metapane");
+              var newclicked = d3.select(this);
+              if(undefined != clicked){
+                clicked.attr('stroke-width', '1');
+                if(undefined != clickedid && i == clickedid){
+                  clicked = undefined;
+                  metapane.innerHTML = "";
+                  metapane.style.display = "none";
+                  return;
+                }
+              }
+              metapane.style.display = "block";
+              metapane.innerHTML = "<div class='nodename'>" + d.name + "</div>" +
+                                   "<div class='nodecountry'>" + d.country + "</div>" +
+                                   "<div class='nodedollarvalue'>$" + Math.abs(d.dvalue).formatMoney() + "</div>";
+              clicked = newclicked;
+              clickedid = i;
+              clicked.attr('stroke-width', '5');
+            }
+          } else {
+            return function(d){
+              console.log(this);
+              var metapane = document.getElementById("metapane");
+              metapane.innerHTML = "";
+              metapane.style.display = "none";
+              if(undefined != clicked){
+                clicked.attr('stroke-width', '1');
+                clicked = undefined;
+              }
+            }
+          }
+        }
+
+        var anchorLink = vis.selectAll("line.anchorLink")
+            .data(labelAnchorLinks);//.enter().append("svg:line").attr("class", "anchorLink").style("stroke", "#999");
+
+        var anchorNode = vis.selectAll("g.anchorNode")
+            .data(force2.nodes())
+          .enter()
+            .append("svg:g")
+            .attr("class", "anchorNode");
+
+        anchorNode.append("svg:circle")
+            .attr("r", 0)
+            .style("fill", "#FFF");
+
+        anchorNode.append("svg:text")
+            .text(function(d, i) { return i % 2 == 0 ? "" : d.node.name })
+            .style("fill", "#333")
+            .style("font-family", "Arial")
+            .style("font-size", function(d) { return log(2,d.node.links)*2+8; });
+
+        var updateLink = function() {
+          this.attr("x1", function(d) { return d.source.x; })
+              .attr("y1", function(d) { return d.source.y; })
+              .attr("x2", function(d) { return d.target.x; })
+              .attr("y2", function(d) { return d.target.y; });
+        };
+
+        var updateNode = function() {
+          this.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+        };
+
+        force.on("tick", function() {
+
+          //force2.start();
+
+          node.call(updateNode);
+
+          anchorNode.each(function(d, i) {
+            //if(i % 2 == 0) {
+              d.x = d.node.x;
+              d.y = d.node.y;
+            /*} else {
+              var b = this.childNodes[1].getBBox();
+
+              var diffX = d.x - d.node.x;
+              var diffY = d.y - d.node.y;
+
+              var dist = Math.sqrt(diffX * diffX + diffY * diffY);
+
+              var shiftX = b.width * (diffX - dist) / (dist * 2);
+              shiftX = Math.max(-b.width, Math.min(0, shiftX));
+              var shiftY = 5;
+              this.childNodes[1].setAttribute("transform", "translate(" + shiftX + "," + shiftY + ")");
+            }*/
+          });
+
+          anchorNode.call(updateNode);
+
+          link.call(updateLink);
+          anchorLink.call(updateLink);
+
+        });
+      });
+
+		</script>
+    <div class="background" id="background"></div>
+    <div class="metapane" id="metapane"></div>
+	</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Browsers</title>
+    <script type="text/javascript" src="d3.js"></script>
+    <script type="text/javascript" src="d3.layout.js"></script>
+    <script type="text/javascript" src="d3.time.js"></script>
+    <script type="text/javascript" src="d3.csv.js"></script>
+    <style type="text/css">
+
+      text {
+        font: 11px sans-serif;
+      }
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      //var data =  [1,1,1,1,2,3,6,9,26,27,392,693,1295,1690,3529,56874,69776,175653];
+
+      //var data = [4, 8, 15, 16, 23, 42];
+
+      var p = [0, 200, 20, 70],
+          h = 600 - p[0] - p[2],
+          w = 1400 - p[1] - p[3],
+          date_scale = d3.time.scale().range([0, w]),
+          pageview_scale = d3.scale.linear().range([h, 0]),
+          //z = d3.scale.ordinal().range(["#B33131", "#B66F2D", "#B6B330", "#71B232", "#33B22D", "#31B272", "#2DB5B5", "#3172B6", "#3232B6", "#6E31B2", "#B43A4F", "#B53071"]),
+          z = d3.scale.ordinal().range(["#B33131", "#B66F2D", "#B6B330", "#33B22D", "#31B272", "#2DB5B5", "#3172B6", "#3232B6", "#6E31B2", "#B43A4F", "#B53071"]),
+          parse = d3.time.format("%Y-%m-%d").parse,
+          format = d3.time.format("%b");
+
+      d3.csv("browsers.csv", function(pageviews) {
+
+        // Transpose the data into layers by cause.
+        var browsers = d3.layout.stack()(["Googlebot","HTCP3300-Mozilla","OpenWave","Sony-HTTPClient","CFNetwork","Explorer.gzip","gzip","Palm680","iTunes","Konqueror","Mozilla Compatible Agent","Netscape","Mozilla","Camino","Opera","Safari","Internet Explorer","Firefox","HTC-8100","SonyEricssonK800iv","Internet Explorer 5.x.gzip","ljt_ignoreme:4103.gzip","SAMSUNG-SGH-I607","ljt_ignoreme:3709.gzip","Dopod818Pro","OpenWare","What would you want if you could just command the universe to give it to you? People are using this magic system to attract cars. boats. cycles and even $97.000 in cash. See http:","(not set)","SiemensSL65","MEGAUPLOAD 1.0.gzip","HTC-3100","Postino","Sleipnir Version 1.66.gzip","SonyEricssonZ610i","Galeon","SonyEricssonK800i","SquidClamAV_Redirector 1.8.2.gzip","HTC-8500","<SCRIPT>window.location='http:","Baiduspider+","SonyEricssonK790a","SonyEricssonW880i","libwww-perl","Palm750","SpaceBison","T-Mobile Dash Mozilla","default.gzip","iCab","Anonymisiert durch Steganos Internet Anonym.gzip","PPC; 240x320; HTC_P3450","Vodafone","leck mich 1.0 auf Xubuntu.gzip","sweet.gzip","X-Mailer: Sylpheed version 0.9.6claws","Playstation Portable","Playstation 3","Googlebot 2.1.gzip","UserAgent","OmniWeb","moto1000.gzip","Alexa Toolbar.gzip","NokiaN90-1","SonyEricssonK550i","SonyEricssonK810i","maxthon.gzip","onnet","Alexa Toolbar","AvantGo","HTC-8900","Lynx","alexa toolbar","internal zero-knowledge agent","NokiaN70","http:","Blazer","msie","SAMSUNG-SGH-I617","Picsel","eMule","Full Tilt Poker","MEGAUPLOAD 1.0","blah","Ade Pain","NetFront","SonyEricssonT290","SonyEricssonT637","WideXS API","YCOAPFPSQJKQRTN","*Internet Explorer","Mosaic","MY","BFPBMCSRQVSDUZHS","BNCOVMMXETBPP","FU","FVILD","GetALife","I","IOYMJMYTJ","NokiaN95*","PikaWeb-1.337 \\||","Sylera","SonyEricssonS700i","God","fake","PANTECH-C810","BlackBerry7100i","compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; FDM; Alexa Toolbar","@=Mozilla","CEORIEKJWAG","ETsc10","FWVRSRKPYZWUKJ","Sleipnir1.66 Sohji KAMISHIRO edition","googlebot","openwave","Googlebot","Nutscrape","@=Googlebot","Vodafone",".","FYNRGNRWGKFYHN","LG","Netscape 7.2","NokiaN73 -- matthieu","bwh3_user_agent","iamdebugger","DoCoMo","FeedDemon","HTC_P5500 Mozilla","HackOrDie","Yahoo! Slurp","fake_user_agent Mozilla","Nokia6680","OHYEHGRSUKRCXBH","Xpera","8900a","portalmmm","sony ericssion","HTC_TyTN_II Mozilla","LG-CU920","UJRC","curl","HTC_P3650 Mozilla","HTC_P3700 Opera","SmallProxy 3.3.6 Free","BlackBerry9000","HTC_P3700 Mozilla","LG-CU515","LG-CU720","Xda Orbit; 240x320","Xda_orbit_2; 240x320","reset","SAMSUNG-SGH-i780","Ad Muncher v4.6 Build 10270","AppEngine-Google;","DMS352","LG-TU915 Obigo","Mazida","Mett mit Zwiebeln","NGB","X1i Mozilla","LG-CU915","zte-f150","Safari 3.1 - Mac","QZRAQXVUCSR","SAMSUNG-SGH-i600","Treo800w","iPhone","Avant Browser","LG-KU990","NokiaN70-1","SonyEricssonK750i","Windows Mobile UA: Mozilla","ZZOLNEHECJFQHNU","mac","SeaMonkey","Chrome","AZZABKZTNR","HTC_P4550 Mozilla","HTC_Touch_Pro_T7272 Opera","LTID=gfk147620","Tunes","UVSC","IBrowse","SAMSUNG-SGH-i900","BlackBerry9500","HTC_P3300 Mozilla","KANSRAJGHHJMEM","Mac","NokiaN95_8GB-3;Mozilla","Uoi-Adzap-Agent","dopod S1_CMCC","HTC_Touch_HD_T8282 Opera","MVV","BlackBerry9530","UCWEB6.0","undefined GoogleToolbarBB","SAMSUNG-SGH-I907","12345","Diyhard_189178222219219231219213207","HTC_P3450 Opera","HTC_P3470 Mozilla","HTC_Touch_3G_T3232 Opera","HTC_Touch_HD_T8282 Mozilla","HTC_Touch_Pro_T7272 Mozilla","MOT-ZN5","XV6850 Opera","Nokia6500s-1","Amoi 8709","DV Crawker","javascript:void","-SGH-I607","8900b","LG9700","Nokia3110c","NokiaN80-1","SoftBank","VYHBQSIWD","Windows XP SP2: Mozilla","firefox3.1","HTC_P4350 Mozilla","LG-LX600 Polaris","ljt_ignoreme:19274","PPC; 480x800; HTC_Touch_HD_T8282; OpVer 34.119.1.611 Opera","Syabas","-","Explorer 6.0","Motorola-V3m Obigo","MOT-V300","N","SonyEricssonW900i","ljt_ignoreme:16645","BlackBerry8220","BlackBerry8900","Minefield","Mobile Safari 1.1.3","Palm850","SAMSUNG-SGH-i200","Safari5528.16 CFNetwork","Samsung-SPHM540 Polaris","UYTZSXRQ","HTC_Diamond Opera","mozilla firefox 3.0","sismonda","Internet Explorer 2.0","HPiPAQ910","HTC-P4600","SAMSUNG-SGH-I616","SPHM800","TGBUNEM","BlackBerry8350i","Opera Mini","BlackBerry8230","HTC_S740 Mozilla","HTC_Touch_Viva_T2223 Mozilla","Keep Out","Midori","O2","Series60","ZTE Bluebelt","all browser","mozilla","none of your business","HTC_TouchDual Mozilla","le pc de baba","LG-GR500","SAMSUNG-SGH-i780TIM","ShadowSurf FREE Anonymous Proxy http:","MSIE 7.0","admin","Desktoptopia","Ein Browser halt","HTC_S620 Mozilla","HTC_Touch_Viva_T2223 Opera","LG-TE365 Teleca","PWXT","SAMSUNG-SGH-i780ORANGE","federatia","ljt_ignoreme:7007","HTC_Touch_Diamond2_T5353 Opera","Openwave","*","IKFYLHRKSNOMRDZKFFJ","LG-GC900","LG-KP500 Teleca","NewMozilla","NokiaE60-1","Uzbl","Xda_star; 240x320","BlackBerry8520","SonyEricssonX1a","Nokia7390","HTC_P6500 Mozilla","BlackBerry9630","Mozilla","CDR","LG-CT810","LG-GM730","LG-KF750","SAMSUNG-SGH-E250","XV6950 Opera","HTC_Touch_Pro Opera","unknown","HTC_Touch_Pro2_T7373 Opera","HTC-P3700-orange","HTC_Snap_S521 Mozilla","MOT-W510","NokiaE71","PQSILPB","SAMSUNG-SGH-I637","SHARP-TQ-GX17","samr810 Netfront","Empty","SAMSUNG-SGH-I627","HTC_Touch_Cruise_T4242 Opera","SAMSUNG-GT-S5603","BlackBerry9550","Cheeseburger","HD2_T8585 Opera","HTC_HD2_T8585 Opera","LG-GR500R","SGHU600","XV6875 Opera","Xda_diamond Opera","SAMSUNG-S8000","IE with Chrome Frame","HTC_Snap_S526 Mozilla","MSIE 8.0","QuickTime","sl2sfr","LG-KM900","NokiaN97mini","PPC; 240x320; HTC_P3451","SAMSUNG-GT-i8000","XV6975 Opera","Nokia6230","Lunascape","BlackBerry9700","DoubleVerify Crawler","Apple-PubSub","BlackBerry8530","FireFox gameraving","HTC_Diamond Mozilla","HTC_Touch_Pro Mozilla","Nokia5800d-1b","Nokia6300","Wii","SAMSUNG-GT-B7330","HTC_Hermes Mozilla","Nokia5310XpressMusic","Nokia6131","=","Cris Rocks","SMZKHVK","MOT-Q11","BlackBerry8230f","BlackBerry9520","HTC_Touch2_T3333 Opera","HTC_Touch_HD_T8282","LG-GT505","Niagara","NokiaE65","PLAYSTATION 3; 1.00","SAMSUNG-GT-B7320","SAMSUNG-SGH-i900Orange","SE_X1a Mozilla","Treo850","Crawler","Quicktime","SAMSUNG-S8003","TELECA-","mozilla 4.0","anonymous","Fd2\u00ab\u00f9 \ufb02\u00d3 \u2018\u00df\u00e5\u00d1\u00e7 h\u00a7\u00f6\u221a\u00ec]G\u00c7b?\u221e\u2026\u00fcG-\u2264\u00b6>F%H\u00f1\u00ef [J\u00f8\u00ae5\u00d3\u00b0\u00d6\u00b4<","HTC_HD2_T8585 OPERA","NOKIA6120c","SAMSUNG-GT-S5600","Xda_Guide Opera","sam-r810 NetFront","BlackBerry8330","MOT-VE66","msnbot","Firefox GLaDOS","HTC_Snap_S523","Motorola_ES405B","XV6875.1 Opera","dopodA3288","nook browser","BlackBerry8120","dopodA6288","Java","Firefox 3.0","HTC_Touch_HD2_T8585 Opera","LGE-VM510 NetFront","SAMSUNG-GT-S3653","Xda_Diamond_2","sgh-i900","BlackBerry8830","BlackBerry9650","HTC_HD_mini_T5555 Mozilla","ZTE-F102 H3G","opera","Blogshelf","Ask Jeeves\/Teoma","BlackBerry9100","GTFO YOU STUPID FAGGOT","HTC_Touch_Pro2_T7373 Mozilla","LG-GM730f","LG-GW820","LI-JEGH-2522","My-UA-String","SAMSUNG-SGH-T669","MS Windows","HTC_Smart_F3188 Mozilla","Taco HTML Edit2.6.1 CFNetwork","MOT-V3i","NokiaX7-00.1","Gobaldegook","HTC_HD2_T8585 Mozilla","HTC_HD2_T9193 Opera","NokiaE71-2;Mozilla","SAMSUNG-GT-B5310","hide the ip browser","k5","OSSProxy 1.3.326.329","OurBrowser","SAMSUNG-GT-S5233W","kkjjiy4_00hhjjiky","BlackBerry9105","HP_KB1","MM","Safari5533.18.5 CFNetwork","Safari5533.16 CFNetwork","Safari5533.17.8 CFNetwork","OSSProxy 1.3.327.355","LG-GS505 Browser","BlackBerry9300","MSR-ISRCCrawler","BlackBerry9800","ElmediaPlayer","Internet Explorer 8","Isofruit","SAMSUNG-GT-S3650","SAMSUNG-GT-S5230","Tyros4","XV6850.1 Opera","sam-r810 Netfront","usr_inJM","kenjamesdesigns server","BlackBerry9330","Nokia5530","HD_mini_T5555 Mozilla","HD_mini_T5555 Opera","PPC; 480x800; HTC_HD2_T8585-Orange; OpVer 114.143.2.731 Opera","Gecko","HTC-ST7377","HTC_HD2_T9193 Mozilla","wix dich","OSSProxy 1.3.328.330","BlackBerry8700","BlackBerry8910","Nokia3120classic","Nokia6120ci","SAMSUNG-GT-B7300","SAMSUNG-GT-B7610","WordPress","sonyericssonw595c","Nokia5233","SonyEricssonJ108i","Desktop","Fitel5Browser","HTC_Maple_S520 Mozilla","Nokia3500c","Nokia5800 XpressMusic","NokiaE66","NokiaN-GageQD","SonyEricssonW800i","UNTRUSTED","j2me UNTRUSTED","nokia5233 UNTRUSTED","NokiaX6-00","gt-s5233a","J2ME","Dell_Mini 3iX","NokiaE63","RockMelt","Apple Safari webkit","JUC","MHLMIZCQUVWCHO","Maemo Browser","NOKIAN79","NOKIAX5-01","Nokia6630","NokiaC6-00","NokiaC7-00","NokiaE75-2","NokiaN73","OPENWAVE","SonyEricssonGeneric A1","WorldWideweb","ipla","samsung-gt-s3653 UNTRUSTED","ipad","avdn","LG-GS290","Nokia2690","NokiaN8-00","OPPOA125","Rabbit's Patch","Rainmeter Webparser Plugin","SAMSUNG-GT-C3303","SonyEricssonJ105i","SonyEricssonW910i","nokiac3-00.1 UNTRUSTED","samsung-gt-s3650","samsung-gt-s3653","Android","Apple Mac OS X v10.6.5 CoreMedia v1.0.0.10H574","NokiaN97 mini","IUC","NokiaN72","NOKIAE5-00","NOKIAN78","NOKIANokia N81","Nokia5235","Nokia5320di","Nokia6303classic","Nokia6600","Nokia7500","Nokia7610","N\u00e3o foi encontrado qualquer pacote que faculte a ac\u00e7\u00e3o FACTORY_TEST.","SAMSUNG-GT-S5230W","SonyEricssonX2","bird UNTRUSTED","fuck","gt-s5230 UNTRUSTED","micromaxx600 UNTRUSTED","samsung-gt-b5310","user","GT-S5230W","HD2_T8585 Mozilla","Nokia5230","Safari5533.20.27 CFNetwork","gt-s5230","NokiaE72-1","sonyericssonw700i","HTC_P3400i-Mozilla","NOKIAN95","Nokia5000","Nokia5130c-2","NokiaE52-1","NokiaX2-00","SAMSUNG-GT-C3222","SonyEricssonC510","SonyEricssonK510i","SonyEricssonU5","ia_archiver","nokian95 UNTRUSTED","samsung-sgh-u800","IAC","Nokia 5320","Nokia2700c-2","WIN","Dolphin browser hd","Android Browser","Nokia2610","Nokia2730c-1","Nokia5630","NokiaX2-01","SonyEricssonW20","j2me","nokian72","nook","samsung-gt-s8530","OSSProxy 1.3.329.336","Opera 9.4","PagePeeker.com","SonyEricssonM1i","browseripad","Nokia5228","Nokia5800w XpressMusic","NokiaC3-00","NokiaC5-00","S8500 UCWEB6.0","SAMSUNG-GT-S8500","SonyEricssonM1a","SonyEricssonW810c","sonyericssonk530i","Nokia6151","Terra","ZooShot 0.1a","360WebApp","NokiaC5-03","SonyEricssonG502c","True","samsung gt-c3303","Vimprobable2","??","?M4","ALTC_NATIVE_IOS_APP","Mind your own business","NOKIA6700s","NOKIAE62","NOKIAE90","NOKIAN82","Nokia6700c-1","NokiaC2-01","NokiaC5-00.2","NokiaN81","OPENWAVE UNTRUSTED","Posterous-iPhone-3.0.1","SonyEricssonW880","meatsock heavy industries","my WebBrowser","samsung-gt-s5253","Nokia5310","OSSProxy 1.3.330.364","SonyEricssonU8i","mwb-db-client HbbTV","samsung-gt-s3850","NokiaC2-02","Surf","ZooShot 0.42","PagePeeker.com","Desktop Google Reader","NOKIA5320","Nokia7230","Posterous-iPhone-3.0","SAMSUNG-SGH-T528g","Samsung-SPHM540BST Polaris","guard","nokia3250","nokia6233","samsung-gt-s5253 UNTRUSTED","sessionId","Links","MozilUS;q=0.8","NokiaC1-01","NokiaN97","sonyericssonk750i","Mozi=0.8","retickr-osx","BProx","Bloop","Cricket-A410","HTC_HD_mini_T5555 Opera","HTC_P3400-Mozilla","HTC_Touch_Diamond2_T5353 Mozilla","NOKIAN86 8MP","Nokia5238","Nokia5300","Nokia7210Supernova","Nokia7610Supernova","OUV","SAMSUNG-GT-S5610K","SAMSUNG-GT-S5620","SonyEricssonJ10i2","SonyEricssonK310i","SonyEricssonT715","SonyEricssonW995","SonyEricssonZ558c","ZTE-R100","foo","nokia6720c","nokiae66-1","nokian8-00","samsung-gt-c6712","samsung-gt-s5753e","ucsb seclab crawler","PPC; 480x800; HTC_Touch_Pro2_T7385-Orange; OpVer 122.190.1.610 Opera","UCWEB","gt-s5233s UNTRUSTED","hpa-bot","lava-a10 UNTRUSTED","O1","lg-c105 UNTRUSTED","gt-s5233s","sonyericssonu5i","OSSProxy 1.3.331.322","iPhone GooglePlusOne","320x240; VZW; UTStar-XV6175.1; Windows Mobile 6.5 Standard;","BlackBerry8310","Mozilla 5.0","NOKIA6760s-1","Nokia 6122c","Nokia6303iclassic","NokiaC5-00i","NokiaC6-01","NokiaX3-02","OJETE","Phantom.js bot","SAMSUNG-C6625","SAMSUNG-GT-C6712","SAMSUNG-GT-S5230-ORANGE","SonyEricssonW580i","SonyEricssonW595","api.linkpeek.com","cinda","nokiae90-1","samsung-sgh-a777 UNTRUSTED","samsung-sgh-a877","sonyericssonk800i","sonyericssonw395","t50","NokiaX3-00","SonyEricssonS500i","gt-s5233w","sonyericssonk810i","samsung-gt-s5263 UNTRUSTED","SAMSUNG-GT-S3770K","NokiaC2-03","Nokia3600slide"].map(function(browser) {
+          return pageviews.map(function(d) {
+            return {x: parse(d.date), y: +d[browser], bname: browser};
+          });
+        }));
+
+        var mx = browsers1[0].length,
+            my = d3.max(browsers1, function(d) { return d3.max(d, function(d) { return d.y + d.y0; }) }),
+            x = function(d) { return d.x * w / mx },
+            y = function(d) { return (d.y * (h / my)); },
+            y0 = function(d) { return h - d.y0 * h / my; },
+            y1 = function(d) { return h - (d.y + d.y0) * h / my; };
+
+        date_scale.domain([browsers1[0][0].x, browsers1[0][browsers1[0].length - 1].x]);
+        pageview_scale.domain([0, d3.max(browsers1[browsers1.length - 1], function(d) { return d.y0 + d.y; })]);
+
+        var chart = d3.select("body").append("svg")
+            .attr("class", "chart")
+            .attr("width", w + p[1])
+            .attr("height", h + p[2])
+          .append("g")
+            .attr("transform", "translate(" + p[3] + "," + p[0] + ")");
+
+        var layers = chart.selectAll("g.layer")
+            .data(browsers1)
+          .enter().append("g")
+            .filter(function(d, i) { return d[mx-1].y > my * 0.0001 ? this : null; })
+            .style("fill", function(d, i) { return z(i); })
+            .attr("class", "layer");
+
+        var bars = layers.selectAll("g.bar")
+            .data(function(d) { return d; })
+          .enter().append("g")
+            .attr("class", "bar")
+            .attr("transform", function(d, i) { return "translate(" + x({x: i}) + ",0)"; });
+
+        bars.append("rect")
+            .attr("width", x({x: .9}))
+            .attr("y", h)
+            .attr("height", 0)
+          .transition()
+            .delay(function(d, i) { return i * 30; })
+            .attr("y", y1)
+            .attr("height", function(d) { return y0(d) - y1(d); });
+          /*.transition()
+            .duration(750)
+            .attr("y", y1)
+            .attr("height", function(d) { return y0(d) - y1(d); });
+*/
+        layers.select("text")
+            .data(browsers1)
+          .enter().append("text")
+            .filter(function(d, i) { return d[mx-1].y > my * 0.002 ? this : null; })
+            .attr("x", w)
+            .attr("y", function (d) { return y1(d[mx-1]) + ((d[mx-1].y*h/my)/2); } )
+            .attr("dx", 3) // padding-right
+            .attr("dy", "0") // vertical-align: bottom
+            .attr("text-anchor", "begin") // text-align: middle
+            .text(function (d) { return d[mx-1].bname; });
+
+        console.log(date_scale.domain());
+
+        layers.select("text")
+            .data(date_scale.ticks(12))
+          .enter().append("text")
+            .attr("x", function(d) { return date_scale(d); } )
+            .attr("y", h + 6)
+            .attr("text-anchor", "middle")
+            .attr("dy", ".71em")
+            .text(date_scale.tickFormat(12));
+
+        // Add y-axis rules.
+        var rule = chart.selectAll("g.rule")
+            .data(pageview_scale.ticks(7))
+          .enter().append("g")
+            .attr("class", "rule")
+            .attr("transform", function(d) { return "translate(0," + pageview_scale(d) + ")"; });
+
+        rule.append("line")
+            .attr("x2", w)
+            .style("stroke", function(d) { return d ? "#000" : "#000"; })
+            .style("stroke-opacity", function(d) { return d ? .1 : 0; });
+
+        rule.append("text")
+            .attr("x", 0)
+            .attr("dy", ".35em")
+            .attr("dx", -6) // padding-right
+            .attr("text-anchor", "end")
+            .text(d3.format(",d"));
+      });
+    </script>
+  </body>
+</html>

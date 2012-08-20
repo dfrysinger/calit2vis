@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Browsers</title>
+    <script type="text/javascript" src="d3.js"></script>
+    <script type="text/javascript" src="d3.layout.js"></script>
+    <script type="text/javascript" src="d3.time.js"></script>
+    <script type="text/javascript" src="d3.csv.js"></script>
+    <style type="text/css">
+
+      text {
+        font: 11px sans-serif;
+      }
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      var p = [0, 200, 20, 70],
+          h = 600 - p[0] - p[2],
+          w = 1400 - p[1] - p[3],
+          date_scale = d3.time.scale().range([0, w]),
+          pageview_scale = d3.scale.linear().range([h, 0]),
+          z = d3.scale.ordinal().range(["#B33131", "#B66F2D", "#B6B330", "#33B22D", "#31B272", "#2DB5B5", "#3172B6", "#3232B6", "#6E31B2", "#B43A4F", "#B53071"]),
+          parse = d3.time.format("%Y-%m-%d").parse,
+          parseISO = d3.time.format("%Y-%m-%dT%H:%M:00.000Z").parse,
+
+          format = d3.time.format("%b");
+
+      d3.json("browsers.json", function(browsers) {
+
+        browsers2.map(function(d) {
+          d.map(function(d) {
+            d.x = parseISO(d.x);
+            return d;
+          } )
+        } );
+
+
+        var mx = browsers2[0].length,
+            my = d3.max(browsers2, function(d) { return d3.max(d, function(d) { return d.y + d.y0; }) }),
+            x = function(d) { return d.x * w / mx },
+            y = function(d) { return (d.y * (h / my)); },
+            y0 = function(d) { return h - d.y0 * h / my; },
+            y1 = function(d) { return h - (d.y + d.y0) * h / my; };
+
+        date_scale.domain([browsers2[0][0].x, browsers2[0][browsers2[0].length - 1].x]);
+        pageview_scale.domain([0, d3.max(browsers2[browsers2.length - 1], function(d) { return d.y0 + d.y; })]);
+
+        var chart = d3.select("body").append("svg")
+            .attr("class", "chart")
+            .attr("width", w + p[1])
+            .attr("height", h + p[2])
+          .append("g")
+            .attr("transform", "translate(" + p[3] + "," + p[0] + ")");
+
+        var layers = chart.selectAll("g.layer")
+            .data(browsers2)
+          .enter().append("g")
+            .filter(function(d, i) { return d[mx-1].y > my * 0.0001 ? this : null; })
+            .style("fill", function(d, i) { return z(i); })
+            .attr("class", "layer");
+
+        var bars = layers.selectAll("g.bar")
+            .data(function(d) { return d; })
+          .enter().append("g")
+            .attr("class", "bar")
+            .attr("transform", function(d, i) { return "translate(" + x({x: i}) + ",0)"; });
+
+        bars.append("rect")
+            .attr("width", x({x: .9}))
+            .attr("y", h)
+            .attr("height", 0)
+          .transition()
+            .delay(function(d, i) { return i * 30; })
+            .attr("y", y1)
+            .attr("height", function(d) { return y0(d) - y1(d); });
+          /*.transition()
+            .duration(750)
+            .attr("y", y1)
+            .attr("height", function(d) { return y0(d) - y1(d); });
+*/
+        layers.select("text")
+            .data(browsers2)
+          .enter().append("text")
+            .filter(function(d, i) { return d[mx-1].y > my * 0.002 ? this : null; })
+            .attr("x", w)
+            .attr("y", function (d) { return y1(d[mx-1]) + ((d[mx-1].y*h/my)/2); } )
+            .attr("dx", 3) // padding-right
+            .attr("dy", "0") // vertical-align: bottom
+            .attr("text-anchor", "begin") // text-align: middle
+            .text(function (d) { return d[mx-1].bname; });
+
+        //console.log(date_scale.domain());
+        //console.log(date_scale.ticks(12));
+        layers.select("text")
+            .data(date_scale.ticks(12))
+          .enter().append("text")
+            .attr("x", function(d) { return date_scale(d); } )
+            .attr("y", h + 6)
+            .attr("text-anchor", "middle")
+            .attr("dy", ".71em")
+            .text(date_scale.tickFormat(12));
+
+        // Add y-axis rules.
+        var rule = chart.selectAll("g.rule")
+            .data(pageview_scale.ticks(7))
+          .enter().append("g")
+            .attr("class", "rule")
+            .attr("transform", function(d) { return "translate(0," + pageview_scale(d) + ")"; });
+
+        rule.append("line")
+            .attr("x2", w)
+            .style("stroke", function(d) { return d ? "#000" : "#000"; })
+            .style("stroke-opacity", function(d) { return d ? .1 : 0; });
+
+        rule.append("text")
+            .attr("x", 0)
+            .attr("dy", ".35em")
+            .attr("dx", -6) // padding-right
+            .attr("text-anchor", "end")
+            .text(d3.format(",d"));
+      });
+
+      /** Returns an event handler for fading a given chord group. */
+      function hover(f) {
+        if(f){
+          return function(d, i) {
+            d3.select(this)
+              .style("stroke", "#555")
+              .style("stroke-weight", "4px")
+              .transition()
+                .attr("transform", "translate(-3,3)");
+
+            info.attr("transform", "translate(" + (x({x: i, mx: d.mx}) + x({x: 1, mx: d.mx})) + ", " + (y0(d, i) + y1(d, i)/2) + ")");
+            info.text(Math.round((d.y / d.max)*100) + "% " + d.bname);
+          };
+        } else {
+          return function(d, i) {
+            d3.select(this)
+              .style("stroke", null)
+              .style("stroke-weight", "0")
+              .transition()
+                .attr("transform", "translate(0,0)");
+            info.attr("transform", "translate(-100,-100)");
+            info.text(null);
+          };
+        }
+      }
+
+    </script>
+  </body>
+</html>
