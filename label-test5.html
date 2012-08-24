@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <script src="http://d3js.org/d3.v2.min.js?2.9.3"></script>
-<script type="text/javascript" src="http://daniel.frysinger.net/infovis/preprocess_force.js"></script>
+<script type="text/javascript" src="preprocess_force.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 
@@ -121,7 +121,7 @@ var force = d3.layout.force()
     .charge(-300)
     .size([width, height]);
 
-d3.json("http://daniel.frysinger.net/infovis/IntlNodes.json", function(json) {
+d3.json("IntlNodes.json", function(json) {
   json = preprocess.links(json);
 
   nodesMap = mapNodes(json.nodes);
@@ -149,6 +149,7 @@ d3.json("http://daniel.frysinger.net/infovis/IntlNodes.json", function(json) {
       .attr("class", "node")
       .on("mouseover", hover(1))
       .on("mouseout", hover(0))
+      .on("click", click())
       .call(force.drag)
       ;
 
@@ -215,6 +216,13 @@ d3.json("http://daniel.frysinger.net/infovis/IntlNodes.json", function(json) {
 
     }
   }
+
+  function click() {
+    return function(d, i) {
+      node.filter(function(n) { return neighboring(d, n) ? null : this; }).remove();
+    };
+  }
+
 
   /** Returns an event handler for fading a given chord group. */
   function hover(f) {
