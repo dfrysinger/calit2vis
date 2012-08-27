@@ -1,0 +1,2002 @@
+[
+	{
+		"Vertex 1": "Calit2 UCI",
+		"Vertex 2": "UCSD",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Calit2 UCI",
+		"Vertex 2": "City of Daegu, Korea",
+		"Dollar Value": "$1,227,668 ",
+		"Partner Type": "Academic",
+		"Country": "Korea",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Calit2 UCI",
+		"Vertex 2": "Embassy of France",
+		"Dollar Value": "$240,000 ",
+		"Partner Type": "Government",
+		"Country": "France",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "Thetis, SPA",
+		"Dollar Value": "$851,850 ",
+		"Partner Type": "Academic",
+		"Country": "Italy",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "King Abdulaziz City for Science and Technology",
+		"Dollar Value": "$3,469,803 ",
+		"Partner Type": "Academic",
+		"Country": "Saudi Arabia",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "King Abdullah University of Science and Technology",
+		"Dollar Value": "$8,463,499 ",
+		"Partner Type": "Academic",
+		"Country": "Saudi Arabia",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "United Kingdom",
+		"Dollar Value": "$8,339 ",
+		"Partner Type": "Academic",
+		"Country": "UK",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "CONACYT",
+		"Dollar Value": "$184,000 ",
+		"Partner Type": "Government",
+		"Country": "Mexoci",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "PRAGMA",
+		"Dollar Value": "$4,205,315 ",
+		"Partner Type": "Project",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Cybermedia Center and Research Center for Ultra-high Voltage Electron Microscopy, Osaka University",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Japan",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Monash University",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Australia",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "National Center for Higher Performance Computing-Taiwan",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Taiwan",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "National Institute of Advanced Industrial Science and Technology-Japan",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Japan",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "UCSD",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Center for Computational Sciences, University of Tsukuba",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Japan",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "College of Computer Science and Technology, Jilin University",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Canada",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Computer Network Information Center, Chinese Academy of Sciences",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "China",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "University of Hong Kong",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Hong Kong",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Kasetsart University",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Thailand",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Konkuk University",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Korea",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Korea Institute of Science and Technology Information",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Korea",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "National Electronics and Computer Technology Center-Thailand",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Thailand",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "TransPAC2, Indiana",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Universiti Sains Malaysia",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Malaysia",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "University of Hyderabad",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "India",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Malaysian Institute of Microelectronic Systems (MIMOS)",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Malaysia",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Academia Sinica Grid Computing Center-Taiwan",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Taiwan",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Advanced Science and Technology Institute-Phillipines",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Phillipines",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "BestGrid New Zealand",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "New Zeland",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Hanoi University of Technology",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Vietnam",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Ho Chi Minh City University of Technology",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Vietnam",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Institue for Information Technology-Vietnam",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Vietnam",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Star Tap, Translight",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Asia Pacific Advanced Network-Japan",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Japan",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Centro de Invertigacion Cientifica y de Educacion Superior de Ensenada (CICESE)",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Government",
+		"Country": "Mexico",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Global Scientific Information and Computing Center, Tokyo Institute of Technology",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Japan",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Institute for High Performance Computing-Singapore",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Singapore",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Pacific Northwest Gigapop",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Bioinformatics Institute Singapore (BII",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Singapore",
+		"Activity Level": "E"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "National Agricultural Research Center-Japan",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Japan",
+		"Activity Level": "E"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "National Center for Supercomputing Applications-Illinois",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "E"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "National Grid Office-Singapore",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Government",
+		"Country": "Singapore",
+		"Activity Level": "E"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Computational Science and Engineering Online, University of Utah",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "E"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "CRAY",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "E"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Korea Basic Science Institute",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Korea",
+		"Activity Level": "E"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Thai National Grid Center-Thailand",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Thailand",
+		"Activity Level": "E"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Indiana University",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "University of Florida",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "University of Wisconsin",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Lan Zhou University",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "China",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "NICT",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Japan",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "Kookmin University",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Korea",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "CeNAT-ITCR",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "CR",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "U Chile",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Chile",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "U Zurich",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Switzerland",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "National Applied Research Laboratories",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Taiwan",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "UCSD: Center for Research in Biological Systems",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "UCSD: National Biomedical Computation Resource",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "UCSD: National Center for Microscopy and Imaging Research",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "UCSD: San Diego Supercomputing Center",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "PRAGMA",
+		"Vertex 2": "UCSD: Calit2",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "AAARNet-Australia",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Australia",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "GLORIAD",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "Pacific Northwest Gigapop",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "AMPATH",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "HEAnet-Ireland",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Ireland",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "Poznan Superocmputing and Networking Center",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Poland",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "ANSP-Brazil",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Brazil",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "I2cat-Spain",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Spain",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "RIPN-Russia",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Russia",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "MCS-Argonnne National Laboratory",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Government",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "iCAIR",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "RNP-Brazil",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Brazil",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "International Educational Equal Access Foundation",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Not for Profit",
+		"Country": "",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "SARA-Norway",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Norway",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "CANARIE-Canada",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "Indiana University",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "StarLight",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "CENIC",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "Internet 2",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "SURA",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "CERN",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "JGN-II-Japan",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Japan",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "SurfNet-Netherlands",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Netherlands",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "CERNET-China",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "China",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "Janet-UK",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "UK",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "TeraGrid-NSF",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Government",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "CESNET-Czechoslovakia",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Czech",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "Juniper Networks, Inc",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "TERENA-Europe",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "EU",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "CIENA",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "King Abdullah University of Science and Technology",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "SA",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "TransLight-NSF",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "CISCO",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "KRLight-Korea",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Korea",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "TWAREN-Taiwan",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Taiwan",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "CPqD-Brazil",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Brazil",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "MIT",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "University of Amsterdam",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Netherlands",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "CSTNET-China",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "China",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "MCNC-North Carolina",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "EVL-UIUC",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "DFN-Germany",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "Germany",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "MAX-Mid Atlantic",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "University College London",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "UK",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "E-ARENA-Russia",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Russia",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "NLR",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "University of Maryland",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "ESNET",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "Naval Postgraduate School",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "University of Washington",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "Extreme Networks",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "NorthWestern",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "UltraLight-US/CERN",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "FAST-California Institute of Technology",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "NSF-CISE",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Government",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "USLHCNet",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "Fermilab",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "NetherLight",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Netherlands",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "WIDE-Japan",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Japan",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "Global Netwave",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Global Lambda Integrated Facility",
+		"Vertex 2": "NORDUnet",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Netherlands",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Pacific Northwest Gigapop",
+		"Vertex 2": "CENIC",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Pacific Northwest Gigapop",
+		"Vertex 2": "CANARIE-Canada",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Canada",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Pacific Northwest Gigapop",
+		"Vertex 2": "StarLight",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Pacific Northwest Gigapop",
+		"Vertex 2": "Internet 2",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Organization",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Pacific Northwest Gigapop",
+		"Vertex 2": "Indiana University",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Pacific Northwest Gigapop",
+		"Vertex 2": "SURA",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Pacific Northwest Gigapop",
+		"Vertex 2": "NLR",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "MCS-Argonnne National Laboratory",
+		"Vertex 2": "Indiana University",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "MCS-Argonnne National Laboratory",
+		"Vertex 2": "StarLight",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "MCS-Argonnne National Laboratory",
+		"Vertex 2": "Internet 2",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "MCS-Argonnne National Laboratory",
+		"Vertex 2": "NLR",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "MCS-Argonnne National Laboratory",
+		"Vertex 2": "TeraGrid-NSF",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Government",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Pacific Northwest Gigapop",
+		"Vertex 2": "TransLight-NSF",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Government",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "MCS-Argonnne National Laboratory",
+		"Vertex 2": "NorthWestern",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "MCS-Argonnne National Laboratory",
+		"Vertex 2": "NSF-CISE",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Government",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "MCS-Argonnne National Laboratory",
+		"Vertex 2": "NorthWestern",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Government",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "MCS-Argonnne National Laboratory",
+		"Vertex 2": "Fermilab",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "CANARIE-Canada",
+		"Vertex 2": "StarLight",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "CANARIE-Canada",
+		"Vertex 2": "CENIC",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "CANARIE-Canada",
+		"Vertex 2": "Internet 2",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "CANARIE-Canada",
+		"Vertex 2": "CISCO",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "CANARIE-Canada",
+		"Vertex 2": "EVL-UIUC",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "MCS-Argonnne National Laboratory",
+		"Vertex 2": "EVL-UIUC",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "CANARIE-Canada",
+		"Vertex 2": "CENIC",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Canada",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "SARA-Norway",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Netherlands",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "AAARNet-Australia",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Australia",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "GLORIAD",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "SurfNet-Netherlands",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Netherlands",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "CERNET-China",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "China",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "Janet-UK",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "UK",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "TeraGrid-NSF",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "CESNET-Czechoslovakia",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Czech",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "Juniper Networks, Inc",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "TERENA-Europe",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "EU",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "CIENA",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "TransLight-NSF",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "CISCO",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "KRLight-Korea",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Korea",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "FAST-California Institute of Technology",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "NSF-CISE",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "USLHCNet",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "NetherLight",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Netherlands",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "WIDE-Japan",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Japan",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "Global Netwave",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "StarLight",
+		"Vertex 2": "NORDUnet",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Network",
+		"Country": "Netherlands",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Indiana University",
+		"Vertex 2": "NorthWestern",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Indiana University",
+		"Vertex 2": "University of Maryland",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Indiana University",
+		"Vertex 2": "NLR",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Indiana University",
+		"Vertex 2": "NorthWestern",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Indiana University",
+		"Vertex 2": "TeraGrid-NSF",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Indiana University",
+		"Vertex 2": "NSF-CISE",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Indiana University",
+		"Vertex 2": "University of Washington",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "University of Maryland",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "NLR",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "NorthWestern",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "TeraGrid-NSF",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "NSF-CISE",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "University of Washington",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "Cisco",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "Juniper Networks, Inc",
+		"Dollar Value": "Unkown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "Cinegrid",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Organization",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Academy of Motion Picture Arts and Science",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Not for Profit",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "California Academy of Sciences",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Not for Profit",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Calit2",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Cisco",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "CPqD-Brazil",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "Brazil",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Cyberport",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Dark Strand",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Digital Domain",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "EVL-UIUC",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "I2cat-Spain",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "Spain",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "INGI-San Francisco State University",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "IntoPIX",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "Japan",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "JVC America",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "KAIST",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "Korea",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Keio University DMC",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "Japan",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "King Abdullah University of Science and Technology",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "SA",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "KTH Royal Insitute of Techology",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "Sweden",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Louisiana State University",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Lucasfilm",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "Lucasfilm",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "MacKenzie",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Mechdyne Corporation",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Meyer Sound Lab",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "Meyer Sound Lab",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Naval Postgraduate School",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "Naval Postgraduate School",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "NCSA-Illinois",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "NCSA-Illinois",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "NetApp",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "NorthWestern",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "NTT",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "Japan",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Pacific Interface Inc",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Poznan Superocmputing and Networking Center",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "Poland",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Renaissance Center North Carolina",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Rogers Communications Center-Ryerson University",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "Canada",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "SARA-Norway",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Network",
+		"Country": "Netherlands",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Sharp-Japan",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "Japan",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Sharp-USA",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Sony",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "Japan",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Tohoku University",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "Japan",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Tulane University",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "University of Amsterdam",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "Netherlands",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "University of Manitoba",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "Canada",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "University of Southern California",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "University of Southern California",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "University of Washington",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "WAAG Society",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Not for Profit",
+		"Country": "Netherlands",
+		"Activity Level": "d"
+	},
+	{
+		"Vertex 1": "Cinegrid",
+		"Vertex 2": "Walt Disney Studios",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "Walt Disney Studios",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Academy of Motion Picture Arts and Sciences",
+		"Vertex 2": "Pacific Interface Inc",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Academy of Motion Picture Arts and Sciences",
+		"Vertex 2": "California Academy of Sciences",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Not for Profit",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "California Academy of Sciences",
+		"Vertex 2": "Pacific Interface Inc",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "NTT",
+		"Vertex 2": "Cinepost-Prague",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "Czech",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Digital Domain",
+		"Vertex 2": "Walt Disney Studios",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "NTT",
+		"Vertex 2": "EVL-UIUC",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "EVL-UIUC",
+		"Vertex 2": "Mechdyne Corporation",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "NTT",
+		"Vertex 2": "Naval Postgraduate School",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "NTT",
+		"Vertex 2": "Tohoku University",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "Japan",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "NTT",
+		"Vertex 2": "Pacific Interface Inc",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": ""
+	},
+	{
+		"Vertex 1": "Sharp-Japan",
+		"Vertex 2": "EVL-UIUC",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "Sharp-USA",
+		"Vertex 2": "EVL-UIUC",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "NTT",
+		"Vertex 2": "University of Amsterdam",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "Netherlands",
+		"Activity Level": "a"
+	},
+	{
+		"Vertex 1": "University of Amsterdam",
+		"Vertex 2": "WAAG Society",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Not for Profit",
+		"Country": "Netherlands",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "NTT",
+		"Vertex 2": "University of Southern California",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "US",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "King Abdullah University of Science and Technology",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Academic",
+		"Country": "SA",
+		"Activity Level": "c"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "Cisco",
+		"Dollar Value": "Unknown",
+		"Partner Type": "Industry",
+		"Country": "US",
+		"Activity Level": "b"
+	},
+	{
+		"Vertex 1": "Calit2 UCSD",
+		"Vertex 2": "Korea Electronics Technology Institute",
+		"Dollar Value": "$1,000,000 ",
+		"Partner Type": "Government",
+		"Country": "Korea",
+		"Activity Level": "a"
+	}
+]
