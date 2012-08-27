@@ -11,34 +11,36 @@ svg {
   border: 1px solid #FEE;
 }
 
+body {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
 .node text {
   pointer-events: none;
-  font-family: sans-serif;
   stroke: #ddd;
   position: relative;
   z-index: 1001;
 }
 
-.countryKey {
+.keyWrapper {
   display: block;
   position: absolute;
-  left: 0;
-  bottom: 0;
+  left: 9px;
+  top: 750px;
   width: 100px;
-  height: 450px;
+  height: 140px;
   background: #fee;
   padding: 10px;
   font-size: 10px;
-  font-family: sans-serif;
 }
 
-.country {
+.key {
   display: block;
   width: 100px;
-  height: 12px;
+  height: 20px;
 }
 
-.countryName {
+.keyName {
   display: block;
   float: left;
   height: 12px;
@@ -63,7 +65,6 @@ svg {
   padding: 20px;
 }
 .nodename, .nodecountry, .nodedollarvalue {
-  font-family: Verdana, Geneva, sans-serif;
   color: #113;
   line-height: 32px;
 }
@@ -75,6 +76,18 @@ svg {
 }
 .nodedollarvalue {
   font-size: 18px;
+}
+
+.detailWrapper {
+  display: block;
+  margin: 20px 0 0 0;
+  overflow: scroll;
+}
+
+.neighborName {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
 }
 
 </style>
@@ -102,19 +115,71 @@ svg {
   }
 
   function neighboring(a, b) {
-    //console.log("checking: ", a, " vs: ", b, " in: ", linkedByIndex);
     return (zoom && (a.key == zoomed.key && ((linkedByIndex[a.key + "," + b.key] || linkedByIndex[b.key + "," + a.key])) ||
                     a.key == b.key || b.key == zoomed.key)) ||
            (!zoom && (linkedByIndex[a.key + "," + b.key] || linkedByIndex[b.key + "," + a.key]));
   }
 
+  function neighboringKey(n, key) {
+    if(n.type_code == key){
+      return true;
+    } else if(undefined !== neighborsIndex[n.key]) {
+      for(var i in neighborsIndex[n.key]){
+        if(neighborsIndex[n.key][i].type_code == key){
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  function populateIndexes(json) {
+    nodesMap = mapNodes(json.nodes);
+
+    json.links.forEach(function (l) {
+      l.source = nodesMap.get(l.source);
+      l.target = nodesMap.get(l.target);
+      neighborsIndex[l.source.key] == undefined ? neighborsIndex[l.source.key] = [] : null;
+      neighborsIndex[l.source.key][l.target.key] = l.target;
+      neighborsIndex[l.target.key] == undefined ? neighborsIndex[l.target.key] = [] : null;
+      neighborsIndex[l.target.key][l.source.key] = l.source;
+      return linkedByIndex["" + l.source.key + "," + l.target.key] = 1;
+    });
+  }
+
+  function populateAndShowMetapane(d) {
+    var metapane = document.getElementById("metapane");
+
+    var paneTitle = "<div class='nodename'>" + d.name + "</div>" +
+        "<div class='nodecountry'>" + d.country + "</div>" +
+        "<div class='nodedollarvalue'>$" + Math.abs(d.dvalue).formatMoney() + "</div>";
+    var paneDetails = "<ul class='detailsWrapper'>";
+
+    for (var key in neighborsIndex[d.key]) {
+      var n = neighborsIndex[d.key][key];
+      paneDetails += "<li class='neighborName'>" + n.name + "</li>";
+    }
+
+    paneDetails += "</ul>";
+
+    metapane.innerHTML = paneTitle + paneDetails;
+    metapane.style.display = "block";
+  }
+
+  function clearAndHideMetapane() {
+    var metapane = document.getElementById("metapane");
+    metapane.innerHTML = "";
+    metapane.style.display = "none";
+  }
+
 var width = 1480,
     height = 900,
     radius = 6,
-    fill = d3.scale.category20(),
+    fill = d3.scale.category10(),
     linkcolordark = "#888",
     linkcolorlight = "#AAA",
-    linkedByIndex = {};
+    linkedByIndex = {},
+    neighborsIndex = {};
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -132,20 +197,15 @@ var zoomed = null;
 var links = force.links();
 var nodes = force.nodes();
 
-d3.json("IntlNodes.json", function(json) {
+d3.json("IntlNodesNew.json", function(json) {
+
   json = preprocess.links(json);
 
-  nodesMap = mapNodes(json.nodes);
-
-  json.links.forEach(function(l) {
-    l.source = nodesMap.get(l.source);
-    l.target = nodesMap.get(l.target);
-    return linkedByIndex["" + l.source.key + "," + l.target.key] = 1;
-  });
+  populateIndexes(json);
 
   resetForce();
 
-  printCountryKey();
+  printKey();
 
   force.on("tick", function(e) {
 
@@ -161,14 +221,16 @@ d3.json("IntlNodes.json", function(json) {
     });
 
     svg.selectAll(".link").attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
+                          .attr("y1", function(d) { return d.source.y; })
+                          .attr("x2", function(d) { return d.target.x; })
+                          .attr("y2", function(d) { return d.target.y; });
 
   });
 
   function click(d, i) {
     d3.event.stopPropagation();
+
+    hoverout(d, i);
 
     if(zoom){
       if(zoomed == d){
@@ -211,6 +273,9 @@ d3.json("IntlNodes.json", function(json) {
 
     zoom = 1;
     zoomed = d;
+
+    populateAndShowMetapane(d);
+
     return null;
   }
 
@@ -220,11 +285,11 @@ d3.json("IntlNodes.json", function(json) {
     zoomed = null;
     svg.selectAll(".node").selectAll("text").remove();
     svg.on("click", null);
+    clearAndHideMetapane();
     resetForce();
   }
 
   function hoverover(d, i) {
-    var metapane = document.getElementById("metapane");
     var this_node = d3.select(this);
 
     if(!zoom){
@@ -266,20 +331,10 @@ d3.json("IntlNodes.json", function(json) {
     });
 
     this_node.style("opacity", 1);
-
-    metapane.style.display = "block";
-    metapane.innerHTML = "<div class='nodename'>" + d.name + "</div>" +
-                         "<div class='nodecountry'>" + d.country + "</div>" +
-                         "<div class='nodedollarvalue'>$" + Math.abs(d.dvalue).formatMoney() + "</div>";
+    populateAndShowMetapane(d);
   }
 
   function hoverout(d, i) {
-    var metapane = document.getElementById("metapane");
-    var this_node = d3.select(this);
-    this_node.selectAll("circle")
-      .style("stroke-width", "1px")
-      .style("opacity", 1);
-
     var link = svg.selectAll(".link");
     var node = svg.selectAll(".node");
 
@@ -295,18 +350,20 @@ d3.json("IntlNodes.json", function(json) {
 
     node.style("opacity", 1);
 
-    metapane.innerHTML = "";
-    metapane.style.display = "none";
+    if(zoom){
+      populateAndShowMetapane(zoomed)
+    } else {
+      clearAndHideMetapane();
+    }
   }
 
   function setForceDefaults(){
-    force
-          .gravity(.3)
-          .distance(100)
-          .linkStrength(.7)
-          .charge(-500)
-          .friction(.6)
-          .size([width, height]);
+    force.gravity(.3)
+         .distance(100)
+         .linkStrength(.7)
+         .charge(-500)
+         .friction(.6)
+         .size([width, height]);
   }
 
   function refresh(){
@@ -332,8 +389,8 @@ d3.json("IntlNodes.json", function(json) {
 
     nodeEnter.append("circle")
       .attr("r", function(d) { return (radius + (d.links * .5)) - .75;})
-      .style("fill", function(d) { return fill(d.country_code); })
-      .style("stroke", function(d) { return d3.rgb(fill(d.country_code)).darker(); });
+      .style("fill", function(d) { return fill(d.type_code); })
+      .style("stroke", function(d) { return d3.rgb(fill(d.type_code)).darker(); });
 
     node.exit().remove();
 
@@ -354,31 +411,62 @@ d3.json("IntlNodes.json", function(json) {
     refresh();
   }
 
-  function printCountryKey(){
+  function printKey(){
 
     var hoverKeyOn = function() {
       return function(){
-        var code = this.id;
+        var key = this.id;
         var node = svg.selectAll(".node");
         var link = svg.selectAll(".link");
 
+        node.selectAll("circle").style("fill", function(n) {
+          if (n.type_code == key) {
+            return fill(n.type_code);
+          } else {
+            return "#ccc";
+          }
+        }).style("stroke", function(n) {
+          if (n.type_code == key) {
+            return d3.rgb(fill(n.type_code)).darker();
+          } else {
+            return d3.rgb("#ccc").darker();
+          }
+        });
+
+        if (link) {
+          link.attr("stroke-opacity", function(l) {
+            if (l.source.type_code == key || l.target.type_code == key) {
+              return 1.0;
+            } else {
+              return 0.1;
+            }
+          }).attr("stroke", function(l) {
+            if (l.source.type_code == key || l.target.type_code == key) {
+              return linkcolordark;
+            } else {
+              return linkcolorlight;
+            }
+          });
+        }
+
         node.style("opacity", function(n) {
-          if (n.country_code == code) {
+          if (neighboringKey(n, key)) {
             return 1;
           } else {
             return .2;
           }
         });
+
         node.append("text")
           .attr("dx", 12)
           .attr("dy", ".35em")
           .attr("font-size", 12)
           .attr("stroke-width", 0)
           .attr("fill", "#000")
-          .attr("font-weight", "900")
-          .text(function(n) { if (n.country_code == code) {return n.name;} });
+          .attr("font-weight", "100")
+          .text(function(n) { if (n.type_code == key) {return n.name;} });
 
-        link.attr("stroke-opacity", 0.2);
+        //link.attr("stroke-opacity", 0.2);
 
       }
     };
@@ -388,36 +476,39 @@ d3.json("IntlNodes.json", function(json) {
         var node = svg.selectAll(".node");
         var link = svg.selectAll(".link");
         node.style("opacity", 1);
+        node.selectAll("circle")
+            .style("fill", function(d) { return fill(d.type_code); })
+            .style("stroke", function(d) { return d3.rgb(fill(d.type_code)).darker(); });
         node.selectAll("text").remove();
         link.attr("stroke-opacity", 1);
 
       }
     };
 
-    var countryKey = [];
-    var countryKeyHTML = "";
+    var keyArray = [];
+    var keyHTML = "";
 
     json.nodes.forEach(
       function(d){
-        if(undefined !== d.country_code){
-          return countryKey[d.country_code] = d.country;
+        if(undefined !== d.type_code){
+          return keyArray[d.type_code] = d.type;
         }
       }
     );
 
-    countryKey.forEach(function(d, i){
-      return countryKeyHTML = countryKeyHTML +
-          "<div class='country' id='"+ i +"'><div class='keyBox' style='background-color: " + fill(i) +
-          "'></div><div class='countryName'>" + d + "</div></div>"
+    keyArray.forEach(function(d, i){
+      return keyHTML = keyHTML +
+          "<div class='key' id='"+ i +"'><div class='keyBox' style='background-color: " + fill(i) +
+          "'></div><div class='keyName'>" + d + "</div></div>"
     });
 
-    document.getElementById("countryKey").innerHTML = countryKeyHTML;
+    document.getElementById("keyWrapper").innerHTML = keyHTML;
 
-    var countries = document.getElementsByClassName("country");
+    var keys = document.getElementsByClassName("key");
 
-    for(var i=0; i<countries.length; i++){
-      countries[i].onmouseover = hoverKeyOn();
-      countries[i].onmouseout = hoverKeyOff();
+    for(var i=0; i<keys.length; i++){
+      keys[i].onmouseover = hoverKeyOn();
+      keys[i].onmouseout = hoverKeyOff();
     }
   }
 
@@ -425,5 +516,5 @@ d3.json("IntlNodes.json", function(json) {
 
 </script>
 <div class="metapane" id="metapane"></div>
-<div class="countryKey" id="countryKey"></div>
+<div class="keyWrapper" id="keyWrapper"></div>
 </body>
