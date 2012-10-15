@@ -26,7 +26,7 @@ body {
   display: block;
   position: absolute;
   left: 9px;
-  top: 1050px;
+  top: 617px;
   width: 100px;
   height: 140px;
   background: #fee;
@@ -175,11 +175,12 @@ body {
     metapane.style.display = "none";
   }
 
-var width = 2000,
-    height = 1200,
+var width = 1024,
+    height = 768,
     radius = 6,
     //fill = d3.scale.ordinal().range(["network", "notforp", "industr", "calit2 ", "academic", "gov   ", "project"]),
-      fill = d3.scale.ordinal().range(["#E6F5D0", "#A1D76A", "#F7F7F7", "#E9A3C9", "#C51B7D", "#FDE0EF", "#4D9221"]),
+    //fill = d3.scale.ordinal().range(["#E6F5D0", "#A1D76A", "#F7F7F7", "#E9A3C9", "#C51B7D", "#FDE0EF", "#4D9221"]),
+    fill = d3.scale.category10(),
     linkcolordark = "#888",
     linkcolorlight = "#AAA",
     linkedByIndex = {},
@@ -269,10 +270,10 @@ d3.json("IntlNodesAcry.json", function(json) {
               .attr("font-weight", function(d) { return d.links > 5 ? "900" : "100"; })
               .text(function(n) { if (neighboring(d, n)) {return n.acr == undefined ? n.name : n.acr;} });
 
-    force.gravity(.3)
+    force.gravity(.4)
          .distance(150)
          .linkStrength(.8)
-         .charge(-9000)
+         .charge(-7000)
          .friction(.2)
          .start();
 
@@ -381,10 +382,10 @@ d3.json("IntlNodesAcry.json", function(json) {
   }
 
   function setForceDefaults(){
-    force.gravity(.2)
+    force.gravity(.5)
          .distance(130)
          .linkStrength(.7)
-         .charge(-1000)
+         .charge(-800)
          .friction(.6)
          .size([width, height]);
   }
